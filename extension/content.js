@@ -15,10 +15,6 @@ InboxSDK.load('1', 'sdk_NameCheck_3598f01e7b').then(function(sdk){
 		console.log('statusBar');
 		console.log(statusBar.el);
 
-
-
-
-
 		var bodyElement = composeView.getBodyElement();
 		console.log("bodyElement");
 		console.log(bodyElement);
@@ -45,9 +41,7 @@ InboxSDK.load('1', 'sdk_NameCheck_3598f01e7b').then(function(sdk){
 				evaluationManager.evaluateEmailContent(composeViewManager.recipients(),composeViewManager.body());
 			},
 		});
-
 	});
-
 });
 
 
@@ -68,9 +62,12 @@ function onRecipientsChanged (event) {
 
 function onSubjectChanged (event) {
 	composeView.getSubject();
+
 }
 
 function onBodyChanged (event) {
+
+
 	console.log(event);
 
 	composeViewManager.setBody(event);

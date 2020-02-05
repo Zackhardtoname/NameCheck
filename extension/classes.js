@@ -127,6 +127,38 @@ var EvaluationManager = function() {
     }
 
     console.log(reports);
+
+    let good = false;
+    for (let i = 0; i < reports.length; i++) {
+      good |= reports[i].firstName.found;
+      good |= reports[i].lastName.found;
+    }
+
+    if (!good) {
+      sweetAlert("Wrong Name?", "The correct name should be " + reports[0].firstName.target + " " + reports[0].lastName.target, "warning");
+
+      // Swal.fire({
+      //   title:  "Wanna check addressee's name?",
+      //   text: "The correct name should be " + reports[0].firstName.target + " " + reports[0].lastName.target,
+      //   icon: 'warning',
+      //   showCancelButton: true,
+      //   confirmButtonColor: '#3085d6',
+      //   cancelButtonColor: '#d33',
+      //   confirmButtonText: 'Yes, send it!',
+      //   cancelButtonText: 'Change it'
+      // }).then((result) => {
+      //   if (result.value) {
+      //     Swal.fire(
+      //         'Deleted!',
+      //         'Your file has been deleted.',
+      //         'success'
+      //     )
+      //   }
+      // })
+
+
+      // console.log(composeView.getToRecipients());
+    }
   }
 
   function checkForRecipient (recipient,body) {
